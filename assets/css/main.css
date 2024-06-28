@@ -117,18 +117,39 @@ button {
 #my-box {
 	
     width: 200px; /* Initial width */
-    height: 40vh;
-    transition: width 0.3s ease, height 0.3s ease; /* Smooth transition */
+    height: 400px;
+   transition: width 0.3s ease, height 0.3s ease; /* Smooth transition */
 }
 
-#my-button {
+
+
+
+#keyInput {
+	margin:auto;
+margin-top:150px;
+width:1500px;
+max-width:100%; 
+overflow-x: scroll; 
+
+
 	
 }
 
+#keybutton {
+	margin:auto;
+margin-top:0px;
+width:750px;
+max-width:100%; 
 
-#gameInput {
-	
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -195,14 +216,7 @@ button {
 
 
 
-@media screen and (max-width: 70000px) {
-    #my-button {
-        width: 400px;
-        height: 50px;
-        /* Other styles for smaller screens */
-    }
-	
-}
+
 
 
 

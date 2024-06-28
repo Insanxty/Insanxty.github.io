@@ -25,7 +25,7 @@
 		<script>
 			
 			(function() {
-				const idleDurationSecs = 60; // X number of seconds
+				const idleDurationSecs = 660; // X number of seconds
 				const redirectUrl = '/login.html'; // Redirect idle users to this URL
 			
 				let idleTimeout; // Variable to hold the timeout, do not modify
@@ -172,9 +172,10 @@
 						<nav>
 							<ul>
 								<li><a href="#gamesearch">search</a></li>
-								<li><a href="#wemodcracker">wemod cracker</a></li>
+								<li><a href="#wemodcracker">wemod patcher</a></li>
 								<li><a href="#spotifycracker">spotify cracker</a></li>
-								<li><a href="#pcoptimizer">pc optimizer</a></li>
+								<li><a href="#keydownload">codigos</a></li>
+								<li><a href="#embreve">???</a></li>
 								
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
@@ -309,13 +310,35 @@
 						</article>
 
 
-						<article id="pcoptimizer">
-							<h2 class="major">pc opmizer</h2>
+						<article id="keydownload">
+							<h2 class="major">CODIGOS</h2>
 							
-							<p>Esta ferramenta vai te dar mais fps em jogos </a>.</p>
+							<p>aqui, consegues baixar coisas com o codigo que o teu agente te deu</a>.</p>
 							
+							<input type="text" id="keyInput" placeholder="mete o teu codigo aqui">
+							<button id="keybutton" onclick="redirectToWebsite()">Go</button>
 						
-							<li><a href="https://download.overwolf.com/installer/prod/cfbc7eeb79ab95eb3f553c4344a186ee/Hone%20-%20Installer.exe">download</a></li>
+							<script>
+								
+								const keys = [
+									{ key: "ojoaoegay123", websiteurl: "eusei.html" },
+									
+									
+								];
+						
+						
+								function redirectToWebsite() {
+									const enteredKey = document.getElementById("keyInput").value;
+									const matchedKey = keys.find(item => item.key === enteredKey);
+						
+									if (matchedKey) {
+										window.open(matchedKey.websiteurl, "_blank");
+									} else {
+										
+									}
+								}
+							</script>
+							
 							
 						</article>
 
