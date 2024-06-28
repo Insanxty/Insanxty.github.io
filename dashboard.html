@@ -1,0 +1,647 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<script>
+//		    const now = new Date();
+//    const targetTime = new Date(now);
+//    targetTime.setHours(11, 0, 0);
+
+ //   if (now < targetTime) {
+        
+//        window.location.href = 'index.html';
+ //     }
+    
+		</script>
+		<title>joaquim dashboard</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>
+			
+			(function() {
+				const idleDurationSecs = 60; // X number of seconds
+				const redirectUrl = '/login.html'; // Redirect idle users to this URL
+			
+				let idleTimeout; // Variable to hold the timeout, do not modify
+			
+				const resetIdleTimeout = function() {
+					// Clears the existing timeout
+					if (idleTimeout) clearTimeout(idleTimeout);
+					// Set a new idle timeout to load the redirectUrl after idleDurationSecs
+					idleTimeout = setTimeout(() => location.href = redirectUrl, idleDurationSecs * 1000);
+				};
+			
+				// Initialize on page load
+				resetIdleTimeout();
+			
+				// Reset the idle timeout on any of the events listed below
+				['click', 'touchstart', 'mousemove'].forEach(evt => document.addEventListener(evt, resetIdleTimeout, false));
+			})();
+	    
+			
+        
+		</script>	
+		
+	</head>
+	<body onload="redirectToIndex()">
+		
+
+
+
+	<body class="is-preload"> 
+    
+
+
+
+
+
+
+
+		
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+
+
+
+				<div class="maintenance-box" id="maintenanceBox">
+					<p>⚠️ Os servidores do joaquim estão desligados / inativos. Entre em contacto com o seu agente ⚠️</p>
+				</div>	
+				<div class="maintenance-box2" id="maintenanceBox2">
+					<p>⚠️ o procurador encontra-se lento neste momento devido ao uso, por favor aguarde ⚠️</p>
+				</div>	
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-gem"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>bem vindo</h1>
+								<p>online<br />
+									<div id="activeUsers">Loading...</div>
+
+									<script>
+										// Simulate active user count (replace with actual tracking data)
+										const minUsers = 50;
+										const maxUsers = 86;
+										const updateInterval = 10000; // Update every 5 seconds
+								
+										function getRandomUsers() {
+											return Math.floor(Math.random() * (maxUsers - minUsers + 1)) + minUsers;
+										}
+								
+										function updateActiveUsers() {
+											const activeUsersElement = document.getElementById('activeUsers');
+											const activeUsers = getRandomUsers();
+											activeUsersElement.textContent = activeUsers;
+										}
+								
+										// Initial update
+										updateActiveUsers();
+								
+										// Update every few seconds
+										setInterval(updateActiveUsers, updateInterval);
+									</script>
+								
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#gamesearch">search</a></li>
+								<li><a href="#wemodcracker">wemod cracker</a></li>
+								<li><a href="#spotifycracker">spotify cracker</a></li>
+								<li><a href="#pcoptimizer">pc optimizer</a></li>
+								
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="gamesearch">
+								
+							    
+								
+								
+
+                                <body>
+									<div id="my-box" class="container">
+										<h2 class="major">procurador v7</h2>
+
+										<h5>✅ = safe</h5>
+										<h5>⚠️ = safe mas tem cuidado</h5>
+										<h5>⚠️‼️ = risco alto</h5>
+										
+										
+										<input type="text" id="gameInput" placeholder="nome do jogo">
+									
+										<button id="my-button" onclick="searchRepacks()">Search Repacks</button>
+										<div id="results"></div>
+										<div class="spinner" id="spinner">
+											<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+										</div>
+										<script>
+											const resizeButton = document.getElementById('my-button');
+											const box = document.getElementById('my-box');
+									
+											resizeButton.addEventListener('click', () => {
+												box.style.height = box.clientHeight === 100 ? '700px' : '700px';
+											});
+										</script>
+									</div>
+								
+									<script>
+										function searchRepacks() {
+											const resultsDiv = document.getElementById("results");
+											const spinnerDiv = document.getElementById("spinner");
+											resultsDiv.innerHTML = "";
+											const gameTitle = document.getElementById("gameInput").value;
+											const websites = [
+												{ name: "FitGirl Repacks✅", url: `https://fitgirl-repacks.site/?s=${encodeURIComponent(gameTitle)}` },
+												{ name: "onlinefix.me✅", url: `https://online-fix.me/index.php?do=search&subaction=search&story=${encodeURIComponent(gameTitle)}` },
+												{ name: "kaOS⚠️", url: `https://kaoskrew.org/search.php?keywords=${encodeURIComponent(gameTitle)}` },
+												{ name: "DODI repacks✅", url: `https://dodi-repacks.site/?s=${encodeURIComponent(gameTitle)}` },
+												{ name: "SKIDROW⚠️", url: `https://www.skidrowreloaded.com/?s=${encodeURIComponent(gameTitle)}` },
+												{ name: "freegoggames✅", url: `https://freegogpcgames.com/?s=${encodeURIComponent(gameTitle)}` },
+												{ name: "mrpcgamer⚠️", url: `https://mrpcgamer.net/?s=${encodeURIComponent(gameTitle)}` },
+												{ name: "IGG-GAMES⚠️", url: `https://igg-games.com/?s=${encodeURIComponent(gameTitle)}` },
+												{ name: "NUVEMAZUL 🇵🇹✅", url: `https://nuvemazul.org/games.html?pl=search&val=${encodeURIComponent(gameTitle)}` },
+												{ name: "‼️⚠️pirate bay⚠️‼️", url: `https://thepiratebay.org/search.php?q=${encodeURIComponent(gameTitle)}` },
+												
+											];
+								
+											
+								
+											// Show spinner
+											spinnerDiv.style.display = "block";
+								
+											// Simulate delay (3 seconds)
+											setTimeout(() => {
+												resultsDiv.innerHTML = ""; // Clear previous results
+								
+												websites.forEach(site => {
+													const link = document.createElement("a");
+													link.href = site.url;
+													link.target = "_blank"; // Open in a new tab
+													link.textContent = site.name;
+													resultsDiv.appendChild(link);
+													resultsDiv.appendChild(document.createElement("br"));
+												});
+								
+												// Hide spinner
+												spinnerDiv.style.display = "none";
+											}, 15000);
+										}
+									</script>
+								</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							</article>
+
+					
+
+						<article id="wemodcracker">
+							<h2 class="major">wemod cracker</h2>
+							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+							<p>Esta ferramenta vai crackear o teu wemod e dar te acesso ao premium</a>.</p>
+							
+						
+							<li> <a href="#wemodcracker">download (link nao funciona)</a></li>
+							
+						</article>
+
+						
+						<article id="spotifycracker">
+							<h2 class="major">spotify cracker</h2>
+							<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+							<p>Esta ferramenta vai crackear o teu spotify e dar te acesso a mods</a>.</p>
+							
+						
+							<li><a href="https://cdn.discordapp.com/attachments/1255558651314307163/1255568434306088980/spotifypatcher.bat?ex=667d9aba&is=667c493a&hm=6699604e4012b045406db73c5cc0576e4ad4f05374d7d5c684efc2e0fe9f0b90&">download</a></li>
+							
+						</article>
+
+
+						<article id="pcoptimizer">
+							<h2 class="major">pc opmizer</h2>
+							
+							<p>Esta ferramenta vai te dar mais fps em jogos </a>.</p>
+							
+						
+							<li><a href="https://download.overwolf.com/installer/prod/cfbc7eeb79ab95eb3f553c4344a186ee/Hone%20-%20Installer.exe">download</a></li>
+							
+						</article>
+
+						
+
+						<!-- Elements -->
+							<article id="elements">
+								<h2 class="major">Elements</h2>
+
+								<section>
+									<h3 class="major">Text</h3>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+									<hr />
+									<h2>Heading Level 2</h2>
+									<h3>Heading Level 3</h3>
+									<h4>Heading Level 4</h4>
+									<h5>Heading Level 5</h5>
+									<h6>Heading Level 6</h6>
+									<hr />
+									<h4>Blockquote</h4>
+									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+									<h4>Preformatted</h4>
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</section>
+
+								<section>
+									<h3 class="major">Lists</h3>
+
+									<h4>Unordered</h4>
+									<ul>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Alternate</h4>
+									<ul class="alt">
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Ordered</h4>
+									<ol>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis viverra.</li>
+										<li>Felis enim feugiat.</li>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis lorem.</li>
+										<li>Felis enim et feugiat.</li>
+									</ol>
+									<h4>Icons</h4>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									</ul>
+
+									<h4>Actions</h4>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Table</h3>
+									<h4>Default</h4>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+									<h4>Alternate</h4>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</section>
+
+								<section>
+									<h3 class="major">Buttons</h3>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Primary</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button">Default</a></li>
+										<li><a href="#" class="button small">Small</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+									</ul>
+									<ul class="actions">
+										<li><span class="button primary disabled">Disabled</span></li>
+										<li><span class="button disabled">Disabled</span></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Form</h3>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="demo-name">Name</label>
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+											</div>
+											<div class="field half">
+												<label for="demo-email">Email</label>
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
+											</div>
+											<div class="field">
+												<label for="demo-category">Category</label>
+												<select name="demo-category" id="demo-category">
+													<option value="">-</option>
+													<option value="1">Manufacturing</option>
+													<option value="1">Shipping</option>
+													<option value="1">Administration</option>
+													<option value="1">Human Resources</option>
+												</select>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+												<label for="demo-priority-low">Low</label>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-high" name="demo-priority">
+												<label for="demo-priority-high">High</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>
+											<div class="field">
+												<label for="demo-message">Message</label>
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; insanity, joaquim pedrocas v6</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				// Toggle maintenance notification (change this value as needed)
+				const showMaintenanceNotification = false;
+				const actionButton = document.getElementById('my-button');
+				// Wait for the DOM to load
+				document.addEventListener('DOMContentLoaded', function () {
+					const maintenanceBox = document.getElementById('maintenanceBox');
+		
+					if (showMaintenanceNotification) {
+						// Show the maintenance box
+						maintenanceBox.style.display = 'block';
+		
+						// Trigger a reflow (force repaint) to apply the initial styles
+						maintenanceBox.getBoundingClientRect();
+		
+						// Fade-in animation
+						maintenanceBox.style.opacity = 1;
+						actionButton.disabled = true;
+						// Wait a few seconds (e.g., 5 seconds)
+						setTimeout(() => {
+							// Slide out animation
+							maintenanceBox.style.transform = 'translateX(100%)';
+							maintenanceBox.style.opacity = 0;
+							actionButton.style.display = 'block';
+						}, 15000); // Adjust the duration as needed
+					}
+				});
+			</script>
+
+
+
+
+<script>
+	// Toggle maintenance notification (change this value as needed)
+	const warning = true;
+	
+	// Wait for the DOM to load
+	document.addEventListener('DOMContentLoaded', function () {
+		const maintenanceBox2 = document.getElementById('maintenanceBox2');
+
+		if (warning) {
+			// Show the maintenance box
+			maintenanceBox2.style.display = 'block';
+
+			// Trigger a reflow (force repaint) to apply the initial styles
+			maintenanceBox2.getBoundingClientRect();
+
+			// Fade-in animation
+			maintenanceBox2.style.opacity = 1;
+			
+			// Wait a few seconds (e.g., 5 seconds)
+			setTimeout(() => {
+				// Slide out animation
+				maintenanceBox2.style.transform = 'translateX(100%)';
+				maintenanceBox2.style.opacity = 0;
+				
+			}, 60000); // Adjust the duration as needed
+		}
+	});
+</script>
+
+	
+	</body> 
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>??? joaquim</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #e02020;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .countdown-container {
+            text-align: center;
+        }
+
+        .countdown {
+            font-size: 24px;
+        }
+        .timer-image {
+            max-width: 75%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .maintenance-box {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: yellow;
+            border-radius: 10px;
+            padding: 10px;
+            display: none; /* Initially hidden */
+            opacity: 0; /* Start with 0 opacity */
+            transition: transform 0.5s ease, opacity 0.5s ease; /* Slide-in and fade-in animations */
+        }
+    </style>
+</head>
+<body>
+  <div class="maintenance-box" id="maintenanceBox">
+    <p>⚠️ Os servidores do joaquim estão desligados / inativos. Entre em contacto com o seu agente ⚠️</p>
+</div>
+    <div class="countdown-container">
+        <h1>OFFLINE</h1>
+        <h1>manuntenção</h1>
+        <div class="countdown" id="countdown"></div>
+        <img class="timer-image" src="joaquim.png" alt="Countdown Image">
+    </div>
+
+    <script>
+        const targetDate = new Date("2024-06-28T11:00:00");
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeLeft = targetDate - now;
+
+            if (timeLeft <= 0) {
+                window.location.href = "login.html";
+            } else {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML = `
+                    <p>${days} dias ${hours} horas ${minutes} minutos ${seconds} segundos</p>
+                `;
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+<script>
+  // Toggle maintenance notification (change this value as needed)
+  const showMaintenanceNotification = true;
+
+  // Wait for the DOM to load
+  document.addEventListener('DOMContentLoaded', function () {
+      const maintenanceBox = document.getElementById('maintenanceBox');
+
+      if (showMaintenanceNotification) {
+          // Show the maintenance box
+          maintenanceBox.style.display = 'block';
+
+          // Trigger a reflow (force repaint) to apply the initial styles
+          maintenanceBox.getBoundingClientRect();
+
+          // Fade-in animation
+          maintenanceBox.style.opacity = 1;
+
+          // Wait a few seconds (e.g., 5 seconds)
+          setTimeout(() => {
+              // Slide out animation
+              maintenanceBox.style.transform = 'translateX(100%)';
+              maintenanceBox.style.opacity = 0;
+          }, 5000); // Adjust the duration as needed
+      }
+  });
+</script>
+
+</body>
+</html>

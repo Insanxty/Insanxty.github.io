@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Richard-Apps' personal webpage! Explore a place with all my projects, pictures, and thoughts. Featuring a terminal-inspired design with stunning effects.">
+	<meta name="author" content="Richard-Apps">
+
+	<title>RichardApps' Personal Website: Coding, Photography, and More</title>
+	
+	<link rel="icon" type="image/png" href="src/media/favicon.png">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="canonical" href="https://www.richardapps.net">
+
+	<script src="script.js" defer></script>
+
+	<link rel="preload" as="font" href="src/fonts/terminus-webfont.woff2" type="font/woff2" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="style.css">
+
+	<meta proberty="og:title" content="RichardApps">
+	<meta proberty="og:description" content="RichardApps' personal webpage! Explore a place with all my projects, pictures, and thoughts. Featuring a terminal-inspired design with stunning effects.">
+	<meta proberty="og:image" content="">
+	<meta proberty="og:url" content="https://richardapps.net">
+	
+	<meta name="keywords" content="RichardApps, Richard Apps, Richard-Apps">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="7 days">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+	<video
+		preload="none"
+		onloadstart="this.playbackRate = 0.65;"
+		autoplay
+		muted
+		loop
+		playsinline
+		id="noise_vid"
+		src="/src/media/noise.mp4"
+		>
+	</video>
+
+	<video
+		preload="none"
+		onloadstart="this.playbackRate = 0.85;"
+		autoplay
+		muted
+		loop
+		playsinline
+		id="rain_vid"
+		src="/src/media/rain_bg.mp4"
+		poster="/src/media/rain_bg_static.png"
+		>
+	</video>
+
+	<div class="vignette"></div>
+
+	<div id="videohue"></div>
+	<div id="canvas">
+		<header>
+			<pre id="title">                                                                      
+ _                       _ _          _       _                      _             _        ___  
+(_)                     (_) |        ( )     | |                    (_)           | |      |__ \ 
+ _ _ __  ___  __ _ _ __  _| |_ _   _ |/ ___  | |_ ___ _ __ _ __ ___  _ _ __   __ _| | __   __ ) |
+| | '_ \/ __|/ _` | '_ \| | __| | | | / __|  | __/ _ \ '__| '_ ` _ \| | '_ \ / _` | | \ \ / // / 
+| | | | \__ \ (_| | | | | | |_| |_| | \__ \  | ||  __/ |  | | | | | | | | | | (_| | |  \ V // /_ 
+|_|_| |_|___/\__,_|_| |_|_|\__|\__, | |___/   \__\___|_|  |_| |_| |_|_|_| |_|\__,_|_|   \_/|____|
+			         _/ |                                                           
+			       |___/                                                            						   
+			</pre>
+			<h1 id="sub_title">insanity's terminal v2 - build ver 2.3</h1>
+			<br>
+			<p>Welcome, visitor!</p>
+			<p>Hope you're doing well! This is my corner of the internet. Feel free to have a look around! You can find some really cool stuff here! :)</p>
+			<br>
+			
+		</header>
+		<p>Some things you might be interested in:</p>
+		<nav id="nav_tabs">
+			<ul>
+				<li><a href="#home" class="tab_switcher" id="home_tab">Home</a></li>
+				<li><a href="#projects" class="tab_switcher" id="projects_tab">Projects</a></li>
+				<li><a href="#pictures" class="tab_switcher" id="pictures_tab">Pictures</a></li>
+				<li><a href="#about" class="tab_switcher" id="about_tab">About</a></li>
+			</ul>
+		</nav>
+		<div id="home" class="tabs">
+			<div class="grid">
+				<div class="grid_row">
+					<div class="grid_row_box">
+						<h2>Fully updated webpage now online!</h2>
+						<p><em>Written on MARCH 24TH, 2024</em></p>
+						<br>
+						<p>I'm excited to launch the new webpage!</p>
+						<p>Everything from the design to the content has been redone. There are still some things that I have to improve, but I'm pretty happy with it so far!</p>
+						<br>
+						<p>Regarding the design, I was inspired by some old vintage terminals! Hope you like it!</p>
+						<br>
+						<p>[!] Projects section will be limited for now because most of them need fixes and improvements before hosting them on the new web server.</p>
+						<p><em>This could take some time...</em></p>
+						<br>
+						<p>[!] If you want to use the old page, use this link: <a href="https://old.richardapps.net" target="_blank">old.richardapps.net</a></p>
+						<p><em>This will most likely not be updated anymore.</em></p>
+					</div>
+				</div>
+				<div class="grid_row">
+					<div class="grid_row_box">
+						<h2>Latest Updates</h2>
+						<p><em>JUNE 15TH, 2024</em> Some minor important changes! Font-weight reduced to make everything sharper, optimized the background videos for faster loading times and fixed the 404 page. :)</p>
+						<p><em>MAY 24TH, 2024:</em> New animations, added another background, improved the about-page and a lot of minor improvements!</p>
+						<p><em>MAY 20TH, 2024:</em> Redesigned the main- and about-page. Changed from news-tab to home-tab, now presenting more of a 'hub' design.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="projects" class="tabs">
+			<h2>PROJECTS</h2>
+			<h3>A short list of projects made by me!</h3>
+			<ul id="pr_list">
+				<li>
+					<p class="pr_title">NameGEN</p>
+					<p class="pr_desc">Generate random, but good sounding, names for your everyday needs! Simple, yet effective tool if you need a nickname, project name, or anything else!</p>
+					<br>
+					<p><a href="https://namegen.richardapps.net" target="_blank">VISIT PAGE</a></p>
+				</li>
+				<li>
+					<p class="pr_title">VisualINC</p>
+					<p class="pr_desc">A website builder for creating awesome webpages without coding!</p>
+					<p class="pr_warning">[!] Still under development, not fully functional yet! (Current Version only works on Chrome, for now)</p>
+					<br>
+					<p><a href="https://visualinc.richardapps.net" target="_blank">VISIT PAGE</a></p>
+				</li>
+				<li>
+					<p class="pr_title">TropicalMC</p>
+					<p class="pr_desc">A minecraft server featuring common gamemodes, while also some unique modes:</p>
+					<p class="pr_desc">-> A RPG gamemode with a explorable world, custom weapons, npc's with AI, and a main quest!</p>
+					<p class="pr_info">[?] Release date TBA. Join the Discord for more information.</p>
+					<br>
+					<p><a href="https://tropicalminecraft.com" target="_blank">VISIT PAGE</a></p>
+				</li>
+				<li>
+					<p class="pr_title">RichardApps-web</p>
+					<p class="pr_desc">The public repository of the website's source code.</p>
+					<p class="pr_info">[?] Feel free to report bugs, add features and contribute if you'd like! :)</p>
+					<br>
+					<p><a href="https://github.com/Richard-Apps/richardapps-web" target="_blank">VISIT PAGE</a></p>
+				</li>
+				<li>
+					<p class="pr_title">Archive</p>
+					<p class="pr_desc">A small list of old, abandoned projects.</p>
+					<p><a href="archive.html">VISIT PAGE</a></p>
+				</li>
+			</ul>
+			<br>
+			<p><em>(The list is really small for now. I will update it as soon as I get more projects online! :) )</em></p>
+		</div>
+
+		<div id="pictures" class="tabs">
+			<h2>PICTURES</h2>
+			<div id="pictures_list">
+				<nav>
+					<ul>
+						<li><a onclick="changeColl('blender')" class="tab_active pic_coll_tabs">Blender</a></li>
+						<li><a onclick="changeColl('photography')" class="pic_coll_tabs">Photography</a></li>
+					</ul>
+				</nav>
+				<div id="blender" class="pic_coll">
+					<h3>Here's a collection of photos I made with the open-source software <a href="https://blender.org" target="_blank">Blender</a>! Color-grading was done using <a href="https://www.adobe.com/de/products/photoshop-lightroom-classic.html" target="_blank">Lightroom-Classic</a>!</h3>
+					<div class="row">
+						<img loading="lazy" src="https://i.postimg.cc/tgxSVBZf/richardapps-spaceship-testrender-widescreen.jpg" onclick="window.open('https://www.artstation.com/artwork/qe0eo2', '_blank')" alt="A cinematic image of a spaceship flying trough a space-station, created by me with Blender 3D." preload="none">
+						<img loading="lazy" src="https://i.postimg.cc/Gm9SbLcb/richardapps-cinematic-space-render3.jpg" onclick="window.open('https://www.artstation.com/artwork/rJzJOe', '_blank')" alt="A cinematic image of a spaceship flying above the ground with mountains in the background, created by me with Blender 3D." preload="none">
+					</div>
+					<div class="row">
+						<img loading="lazy" src="https://i.postimg.cc/15vjxn1W/richardapps-default-cube-final-widescreen.jpg" onclick="window.open('https://www.artstation.com/artwork/491knk', '_blank')" alt="A destroyed default-cube flying over an ocean, created by me with Blender 3D." preload="none">
+						<img loading="lazy" src="https://i.postimg.cc/ncFPwKgj/richardapps-hms-victory-10.jpg" onclick="window.open('https://www.artstation.com/artwork/49n2Lk', '_blank')" alt="A cinematic image of a 3D-modeled ship inspired by the HMS Victory, created by me with Blender 3D." preload="none">
+					</div>
+				</div>
+				<div id="photography" class="pic_coll">
+					<h3>Here are some images I took in the USA!</h3>
+					<p><em>Hover over them to view more information!</em></p>
+					<div class="row row_photography">
+						<div class="img_container">
+							<img src="https://i.postimg.cc/9FkB5hND/P1020060.jpg" loading="lazy" alt="A monochrome picture of the Golden-Gate-Brige.">
+							<div class="img_desc"><p>The famous Golden-Gate-Brige! Was a bit cloudy that day, but that probably made it even better!</p></div>
+						</div>
+						<div class="img_container">
+							<img src="https://i.postimg.cc/bvVkXXT6/P1020722.jpg" loading="lazy" alt="A close-up picture of a chipmunk.">
+							<div class="img_desc"><p>A chipmunk! We found them in a lot of different places. They were really friendly, weren't even scared of us, thus making photographing them pretty easy!</p></div>
+						</div>
+						<div class="img_container">
+							<img src="https://i.postimg.cc/MG6H9cbV/P1020951.jpg" loading="lazy" alt="A minimalistic picture of a helicopter.">
+							<div class="img_desc"><p>Nothing much to say here, but sometimes even the simple, minimalistic photos turn out quite cool!</p></div>
+						</div>
+						<div class="img_container">
+							<img src="https://i.postimg.cc/J0kzsjMV/P1020095.jpg" loading="lazy" alt="A picture of a bird in cloudy, dark weather.">
+							<div class="img_desc"><p>We found this cool-looking bird! Fits well with the cloudy weather and the black stone, monochrome from nature!</p></div>
+						</div>
+					</div>
+					<p>All these were taken with a Panasonic Lumix DMC-TZ71, a surprisingly good travel camera for a low price.</p>
+					<br>
+				</div>
+			</div>
+			<p>Click on one of the pictures to see information about it, or visit my <a href="https://www.artstation.com/richardapps" target="_blank" title="Open my ArtStation profile.">ArtStation</a> profile. I'm also on <a href="https://instagram.com/luqiedesign" target="_blank">Instagram</a>!</p>
+		</div>
+		
+		<div id="about" class="tabs">
+			<div class="grid">
+				<div class="grid_row">
+					<div class="grid_row_box">
+						<h2>About me</h2>
+						<p>Hi! Firstly, thank you for visiting my website! Glad to have you here.</p>
+						<p>As to me, my name is Richard. <em>(Crazy, right?)</em> I'm really interested in everything computer related!</p>
+						<p>I've done some coding, 3D-art, game-development - even digital drawing!</p>
+						<p><em>I'm no real expert in any of these, I just do them as a Hobby.)</em></p>
+					</div>
+					<div class="grid_row_box">
+						<h2>Skills</h2>
+						<p>Some things I learned during my journey:</p>
+						<p>-> Blender <em>I use it to create some cool 3D worlds!</em></p>
+						<p>-> HTML/CSS/JS <em>Obviously used to create this site.</em></p>
+						<p>-> GD-Script <em>The language of Godot! Used for some light game-development.</em></p>
+						<p>-> Python <em>Useful for a lot of projects. Still in the process of learning it, though.</em></p>
+					</div>
+				</div>
+				<div class="grid_row">
+					<div class="grid_row_box">
+						<h2>Pseudonym</h2>
+						<p>Since I had only a phone</em> when starting programming / content creation, I made apps on it! I decided to keep the name, since it's more or less unique - even though I don't do mobile development anymore.</p>
+					</div>
+					<div class="grid_row_box">
+						<h2>Site Goals</h2>
+						<p>Why did I made this site you may ask?</p>
+						<p>It's just nice to have a personal space where I can host and show whatever I want, while having full control over it.</p>
+						<p>Long live the indie-web!</p>
+					</div>
+					<div class="grid_row_box">
+						<h2>Social Media</h2>
+						<p class="contact_link"><i class="fa-brands fa-instagram fa-fw"></i><a href="https://instagram.com/luqiedesign" target="_blank">Instagram</a></p>
+						<p class="contact_link"><i class="fa-brands fa-github fa-fw"></i><a href="https://github.com/richard-apps" target="_blank">GitHub</a></p>
+						<p class="contact_link"><i class="fa-brands fa-artstation fa-fw"></i><a href="https://www.artstation.com/richardapps" target="_blank">Artstation</a></p>
+					</div>
+					<div class="grid_row_box">
+						<h2>Contact</h2>
+						<p>I mostly prefer Discord for contact! As you may have guessed, my username there is 'richardapps'.</p>
+						<br>
+						<p>Questions, wishes, inquiries, problems, and everything else can also go to:</p>
+						<p><a href="mailto:support@richardapps.net" target="_blank">support@richardapps.net</a></p>
+					</div>
+				</div>
+				<div class="grid_row">
+					<div class="grid_row_box">
+						<h2>Resources</h2>
+						<p>Here are some useful resources I use regularly:</p>
+						<br>
+						<p>- development -</p>
+						<p>-> Vercel [<a href="https://www.vercel.com" target="_blank">link</a>] <em>A really good web-hosting platform that offers many features for free! I use it in almost all my projects.</em></p>
+						<p>-> MDN-Docs [<a href="https://developer.mozilla.org/en-US/" target="_blank">link</a>] <em>My go-to platform if I have any problems with HTML/CSS/JS, or for exploring all the posibilities!</em></p>
+						<p>-> Fontshare [<a href="https://www.fontshare.com/" target="_blank">link</a>] <em>Fonts for your website, similar to google-fonts. The library is a bit smaller, but with the same functionality and without trackers!</em></p>
+						<br>
+						<p>- graphics -</p>
+						<p>-> Photopea [<a href="https://www.photopea.com" target="_blank">link</a>] <em>A good browser-based image editor for quick edits!</em></p>
+						<p>-> postimages [<a href="https://postimages.com" target="_blank">link</a>] <em>Best service for hosting your images, without compressing them!</em></p>
+						<p>-> Caesium-ic [<a href="https://github.com/Lymphatus/caesium-image-compressor" target="_blank">link</a>] <em>Desktop software to optimize your images to make your page load faster.</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
