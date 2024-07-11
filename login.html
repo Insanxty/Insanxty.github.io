@@ -1,123 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <script>
-//    function redirectToIndex() {
-//    const now = new Date();
- //   const targetTime = new Date(now);
- //   targetTime.setHours(11, 0, 0);
-
-//    if (now < targetTime) {
-        
- //       window.location.href = 'index.html';
- //     }
- //   }
-  </script>
-  <meta charset="UTF-8">
-  <title>cerebro do joaquim</title>
-  <link rel="stylesheet" href="./style2.css">
-  <script>
-    function validateLogin() {
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-
-      if (username === 'Offon' && password === 'ojoaoegay123') {
-        window.location.href = 'dashboard.html'; // Redirect to dashboard on success
-      } else {
-      
-      }
-
-      if (username === 'M20P' && password === 'ojoaoegay123') {
-        window.location.href = 'dashboard.html'; // Redirect to dashboard on success
-      } else {
-        
-      }
-
-
-      if (username === 'insanity' && password === 'admin') {
-        window.location.href = 'dashboard.html'; // Redirect to dashboard on success
-      } else {
-        
-      }
-
-      if (username === 'Ninjafortnite199120' && password === 'ninjaisgay') {
-        window.location.href = 'dashboard.html'; // Redirect to dashboard on success
-      } else {
-        
-      }
-
-
-      return false; // Prevent default form submission
-    }
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>joaquimn</title>
+<style>
+  body {
+    background-color: black;
+    color: green;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+  }
+  .console-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .console {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow-y: auto;
+    height: 90%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    text-align: left; /* Aligns text to the left */
+  }
+  .console::-webkit-scrollbar {
+    display: none;
+  }
+  input {
+    width: 80%;
+    max-width: 800px;
+    background-color: transparent;
+    color: green;
+    border: 1px solid green;
+    padding: 5px;
+    font-family: 'Courier New', monospace;
+    margin: 10px auto;
+    display: block;
+  }
+</style>
 </head>
+<body>
+<div class="console-container">
+  <div id="console" class="console"></div>
+  <input type="text" id="commandInput" placeholder="Enter password or command" autofocus />
+</div>
 
-<body onload="redirectToIndex()"></body>
+<script>
+  let isAuthenticated = false;
+  let password = 'admin';
 
-  <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+  function scrollToBottom() {
+    let consoleDiv = document.getElementById('console');
+    consoleDiv.scrollTop = consoleDiv.scrollHeight;
+  }
+  function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+  function createSearchLinks(gameTitle) {
+  const websites = [
+{ name: "FitGirl Repacks✅", url: `https://fitgirl-repacks.site/?s=${encodeURIComponent(gameTitle)}` },
+{ name: "onlinefix.me✅", url: `https://online-fix.me/index.php?do=search&subaction=search&story=${encodeURIComponent(gameTitle)}` },
+{ name: "kaOS⚠️", url: `https://kaoskrew.org/search.php?keywords=${encodeURIComponent(gameTitle)}` },
+{ name: "DODI repacks✅", url: `https://dodi-repacks.site/?s=${encodeURIComponent(gameTitle)}` },
+												{ name: "SKIDROW⚠️", url: `https://www.skidrowreloaded.com/?s=${encodeURIComponent(gameTitle)}` },
+												{ name: "freegoggames✅", url: `https://freegogpcgames.com/?s=${encodeURIComponent(gameTitle)}` },
+												{ name: "mrpcgamer⚠️", url: `https://mrpcgamer.net/?s=${encodeURIComponent(gameTitle)}` },
+												{ name: "IGG-GAMES⚠️", url: `https://igg-games.com/?s=${encodeURIComponent(gameTitle)}` },
+												{ name: "NUVEMAZUL 🇵🇹✅", url: `https://nuvemazul.org/games.html?pl=search&val=${encodeURIComponent(gameTitle)}` },
+												{ name: "‼️⚠️pirate bay⚠️‼️", url: `https://thepiratebay.org/search.php?q=${encodeURIComponent(gameTitle)}` },
 
-    <div class="signin">
+
+
+
+  ];
+
+
+  
+
+  // Delay function for 3 seconds before executing the code inside
+  setTimeout(() => {
+    let consoleDiv = document.getElementById('console');
+    websites.forEach(site => {
+      let link = document.createElement('a');
+      link.href = site.url;
+      link.textContent = site.name; // Display only the website name
+      link.style.color = 'green';
+      link.target = '_blank'; // Open in new tab
+      consoleDiv.appendChild(link);
+      consoleDiv.appendChild(document.createElement('br')); // Line break
+    });
+  }, 3000); // 3000 milliseconds = 3 seconds
+}
+
+
+
+
+
+
+function createSearchLinksmovie(movieTitle) {
+  const websites2 = [
+  { name: "zmovie", url: `https://zmovie.site/index.html?s=${encodeURIComponent(movieTitle)}` },
+  { name: "letflix.tv", url: `https://letflix.tv/search/${encodeURIComponent(movieTitle)}` },
+  { name: "cinego", url: `https://cinego.tv/search?keyword=${encodeURIComponent(movieTitle)}` },
+  { name: "bflix", url: `https://bflixhd.to/filter?keyword=${encodeURIComponent(movieTitle)}` },
+  { name: "moviepire", url: `https://moviepire.net/search?q=${encodeURIComponent(movieTitle)}` },
+  { name: "fmovies", url: `https://fmovieswatch.to/?s=${encodeURIComponent(movieTitle)}` },
+
+
+];
+
+
+  
+
+  // Delay function for 3 seconds before executing the code inside
+  setTimeout(() => {
+    let consoleDiv = document.getElementById('console');
+    websites2.forEach(site => {
+      let link = document.createElement('a');
+      link.href = site.url;
+      link.textContent = site.name; // Display only the website name
+      link.style.color = 'green';
+      link.target = '_blank'; // Open in new tab
+      consoleDiv.appendChild(link);
+      consoleDiv.appendChild(document.createElement('br')); // Line break
+    });
+  }, 3000); // 3000 milliseconds = 3 seconds
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function sendMessage(gameTitle) {
+            const webhookUrl = "https://discord.com/api/webhooks/1260960783647637545/B1RT8ficDLQBGRzBlcLUOkCtrpXIMdKiNtD0nLfaOuVMfPFUO-XgzefwJ1nuWgVc8CRZ"; // Replace with your actual webhook URL
+
+            const request = new XMLHttpRequest();
+            request.open("POST", webhookUrl);
+            request.setRequestHeader("Content-type", "application/json");
+
+            // Customize your message data here (e.g., username, content, etc.)
+            const messageData = {
+                username: "new game request",
+                content: gameTitle,
+            };
+
+            request.send(JSON.stringify(messageData));
+}
+
+function sendMessage2(gamemodrequest) {
+            const webhookUrl2 = "https://discord.com/api/webhooks/1260962935862198376/Rie89gGFSSJAcQ0CrmIo-fJuuyxPi7H28yZOUtOVvHQgM31Dzxuhj0vN7Kd2D7TZQylN"; // Replace with your actual webhook URL
+
+            const request = new XMLHttpRequest();
+            request.open("POST", webhookUrl2);
+            request.setRequestHeader("Content-type", "application/json");
+
+            // Customize your message data here (e.g., username, content, etc.)
+            const messageData = {
+                username: "NEW MOD REQUEST",
+                content: gamemodrequest,
+            };
+
+            request.send(JSON.stringify(messageData));
+}
+const keys = [
+									{ key: "ojoaoegay123", websiteurl: "eusei.html" },
+									{ key: "74736457354", websiteurl: "https://dl.gamedva.com/Game/Card-Guardians-v3.12.0-mod-GameDVA.com.apk" },
+									
+					   ];
+						
+						
+								function coderequest(actualcode) {
+									const enteredKey = actualcode;
+									const matchedKey = keys.find(item => item.key === enteredKey);
+						
+									if (matchedKey) {
+										window.open(matchedKey.websiteurl, "_blank");
+									} else {
+										
+									}
+								}
+// Modify the existing processCommand function
+function processCommand() {
+  let input = document.getElementById('commandInput');
+  let command = input.value;
+  input.value = '';
+  let consoleDiv = document.getElementById('console');
+  let newLine = document.createElement('div');
+  
+  if (!isAuthenticated) {
+    if (command === password) {
+      isAuthenticated = true;
+      newLine.textContent = 'Access granted, do "cmds" to view the currently active commands';
+    } else {
+      newLine.textContent = 'Access denied.';
+    }
+  } else {
+    newLine.textContent = '> ' + command;
+    if (command.toLowerCase() === 'cmds') {
+      let responseLine = document.createElement('div');
+      responseLine.textContent = '1 - gamesearch (game name)';
+      consoleDiv.appendChild(responseLine);
+
+
+      let responseLine2 = document.createElement('div');
+      responseLine2.textContent = '2 - code-(codehere)';
+      consoleDiv.appendChild(responseLine2);
+
+      let responseLine3 = document.createElement('div');
+      responseLine3.textContent = '3 - modrequest (game/app name)';
+      consoleDiv.appendChild(responseLine3);
+
+      let responseLine4 = document.createElement('div');
+      responseLine4.textContent = '4 - spotify patcher (win only)';
+      consoleDiv.appendChild(responseLine4);  s
+
+      let responseLine5 = document.createElement('div');
+      responseLine5.textContent = '4 - ver';
+      consoleDiv.appendChild(responseLine5);  
+
+
+
+
+
+
+
+
+    } else if (command.toLowerCase().startsWith('gamesearch ')) {
+      let gameTitle = command.substring('gamesearch '.length);
+      createSearchLinks(gameTitle); 
+      sendMessage(gameTitle)
+      let responseLine = document.createElement('div');
+      responseLine.textContent = 'searching...';
+      consoleDiv.appendChild(responseLine);
+ 
+
+
+    } else if (command.toLowerCase().startsWith('moviesearch ')) {
+      let movieTitle = command.substring('moviesearch '.length);
+      createSearchLinksmovie(movieTitle); 
       
-        <div class="content">
-          
-				<div class="maintenance-box" id="maintenanceBox">
-					<p>⚠️ serviços de login estão temporariamente desativados, pois ainda tamos a resolver o problema dos servidores ⚠️</p>
-				</div>	
-  
-          <h2>log in v.7.1</h2>
-          
-          <div class="form">
-            <div class="inputBox">
-              <input type="text" id="username" required>
-              <i>Username</i>
-            </div>
-            <div class="inputBox">
-              <input type="password" id="password" required>
-              <i>Password</i>
-            </div>
-            <div class="links">
-              <a href="#"></a>
-              <a href="#"></a>
-            </div>
-            <div class="inputBox">
-              <input type="submit" value="Login" id="loginButton" onclick="return validateLogin()">
-          </div>
-          </div>
-  
-        </div>
-      </div>
-  
-    </section>
-    <script>
-      // Toggle maintenance notification (change this value as needed)
-      const showMaintenanceNotification = false;
-      const loginButton = document.getElementById('loginButton');
-      // Wait for the DOM to load
-      document.addEventListener('DOMContentLoaded', function () {
-        const maintenanceBox = document.getElementById('maintenanceBox');
-  
-        if (showMaintenanceNotification) {
-          // Show the maintenance box
-          maintenanceBox.style.display = 'block';
-  
-          // Trigger a reflow (force repaint) to apply the initial styles
-          maintenanceBox.getBoundingClientRect();
-  
-          // Fade-in animation
-          maintenanceBox.style.opacity = 1;
-          loginButton.disabled = true;
-          loginButton.style.display = 'none';
-          // Wait a few seconds (e.g., 5 seconds)
-          setTimeout(() => {
-            // Slide out animation
-            maintenanceBox.style.transform = 'translateX(100%)';
-            maintenanceBox.style.opacity = 0;
-            loginButton.style.display = 'none';
-          }, 25000); // Adjust the duration as needed
-        }
-      });
-    </script>
-  </body>
-  
-  </html>
+      let responseLine = document.createElement('div');
+      responseLine.textContent = 'searching...';
+      consoleDiv.appendChild(responseLine);
+
+
+
+
+
+
+
+
+
+
+
+    } else if  (command.toLowerCase() === 'spotifypatcher') {
+      let responseLine = document.createElement('div');
+      responseLine.textContent = 'prompting download link...';
+      consoleDiv.appendChild(responseLine);
+      window.location.href = "https://cdn.discordapp.com/attachments/1255558651314307163/1255568434306088980/spotifypatcher.bat?ex=6690b87a&is=668f66fa&hm=ba23818a3a0d9f430099a086bfd37929924a750bd8315ac9d4ff7eee70248946&";
+    
+    
+    
+    
+    
+    } else if  (command.toLowerCase() === 'ver') {
+      let responseLine = document.createElement('div');
+      responseLine.textContent = 'ver-v7.3';
+      consoleDiv.appendChild(responseLine);
+
+
+
+
+
+
+
+
+
+
+
+
+    } else if (command.toLowerCase().startsWith('modrequest ')) {
+      let gamemodrequest = command.substring('modrequest '.length);
+      sendMessage2(gamemodrequest)
+      let responseLine = document.createElement('div');
+      responseLine.textContent = 'request sent!';
+      consoleDiv.appendChild(responseLine);
+
+
+
+
+
+
+
+    } else if (command.toLowerCase().startsWith('code ')) {
+      let actualcode = command.substring('code '.length);
+      coderequest(actualcode)
+      
+      let responseLine = document.createElement('div');
+      responseLine.textContent = 'code request sent';
+      consoleDiv.appendChild(responseLine);
+ 
+ 
+    }
+
+
+
+  }
+
+  consoleDiv.appendChild(newLine);
+  scrollToBottom();
+}
+
+  document.getElementById('commandInput').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      processCommand();
+    }
+  });
+</script>
+</body>
+</html>

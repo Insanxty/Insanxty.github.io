@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Console Themed Website</title>
+<title>joaquimn</title>
 <style>
   body {
     background-color: black;
@@ -64,7 +64,7 @@
 }
   function createSearchLinks(gameTitle) {
   const websites = [
-  { name: "FitGirl Repacks✅", url: `https://fitgirl-repacks.site/?s=${encodeURIComponent(gameTitle)}` },
+{ name: "FitGirl Repacks✅", url: `https://fitgirl-repacks.site/?s=${encodeURIComponent(gameTitle)}` },
 { name: "onlinefix.me✅", url: `https://online-fix.me/index.php?do=search&subaction=search&story=${encodeURIComponent(gameTitle)}` },
 { name: "kaOS⚠️", url: `https://kaoskrew.org/search.php?keywords=${encodeURIComponent(gameTitle)}` },
 { name: "DODI repacks✅", url: `https://dodi-repacks.site/?s=${encodeURIComponent(gameTitle)}` },
@@ -74,7 +74,14 @@
 												{ name: "IGG-GAMES⚠️", url: `https://igg-games.com/?s=${encodeURIComponent(gameTitle)}` },
 												{ name: "NUVEMAZUL 🇵🇹✅", url: `https://nuvemazul.org/games.html?pl=search&val=${encodeURIComponent(gameTitle)}` },
 												{ name: "‼️⚠️pirate bay⚠️‼️", url: `https://thepiratebay.org/search.php?q=${encodeURIComponent(gameTitle)}` },
+
+
+
+
   ];
+
+
+  
 
   // Delay function for 3 seconds before executing the code inside
   setTimeout(() => {
@@ -90,6 +97,66 @@
     });
   }, 3000); // 3000 milliseconds = 3 seconds
 }
+
+
+
+
+
+
+function createSearchLinksmovie(movieTitle) {
+  const websites2 = [
+  { name: "zmovie", url: `https://zmovie.site/index.html?s=${encodeURIComponent(movieTitle)}` },
+  { name: "letflix.tv", url: `https://letflix.tv/search/${encodeURIComponent(movieTitle)}` },
+  { name: "cinego", url: `https://cinego.tv/search?keyword=${encodeURIComponent(movieTitle)}` },
+  { name: "bflix", url: `https://bflixhd.to/filter?keyword=${encodeURIComponent(movieTitle)}` },
+  { name: "moviepire", url: `https://moviepire.net/search?q=${encodeURIComponent(movieTitle)}` },
+  { name: "fmovies", url: `https://fmovieswatch.to/?s=${encodeURIComponent(movieTitle)}` },
+
+
+];
+
+
+  
+
+  // Delay function for 3 seconds before executing the code inside
+  setTimeout(() => {
+    let consoleDiv = document.getElementById('console');
+    websites2.forEach(site => {
+      let link = document.createElement('a');
+      link.href = site.url;
+      link.textContent = site.name; // Display only the website name
+      link.style.color = 'green';
+      link.target = '_blank'; // Open in new tab
+      consoleDiv.appendChild(link);
+      consoleDiv.appendChild(document.createElement('br')); // Line break
+    });
+  }, 3000); // 3000 milliseconds = 3 seconds
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function sendMessage(gameTitle) {
             const webhookUrl = "https://discord.com/api/webhooks/1260960783647637545/B1RT8ficDLQBGRzBlcLUOkCtrpXIMdKiNtD0nLfaOuVMfPFUO-XgzefwJ1nuWgVc8CRZ"; // Replace with your actual webhook URL
 
@@ -123,7 +190,7 @@ function sendMessage2(gamemodrequest) {
 }
 const keys = [
 									{ key: "ojoaoegay123", websiteurl: "eusei.html" },
-									{ key: "53047539845", websiteurl: "https://d-09.winudf.com/b/APK/Y29tLnRhcHBzLnJvZ3VlbGlrZS5ycGcuY2FyZGd1YXJkaWFuc18yNDA2Mjc2ODdfYjg3OGNlZA?_fn=Q2FyZCBHdWFyZGlhbnM6IFJvZ3VlIERlY2sgUlBHXzMuMTIuMF9BUEtQdXJlLmFwaw&_p=Y29tLnRhcHBzLnJvZ3VlbGlrZS5ycGcuY2FyZGd1YXJkaWFucw%3D%3D&is_hot=false&k=292493dc0ea53f13b4fa955b87272046669141c4" },
+									{ key: "74736457354", websiteurl: "https://dl.gamedva.com/Game/Card-Guardians-v3.12.0-mod-GameDVA.com.apk" },
 									
 					   ];
 						
@@ -170,10 +237,12 @@ function processCommand() {
       consoleDiv.appendChild(responseLine3);
 
       let responseLine4 = document.createElement('div');
-      responseLine4.textContent = '4 - ver';
-      consoleDiv.appendChild(responseLine4);  
+      responseLine4.textContent = '4 - spotify patcher (win only)';
+      consoleDiv.appendChild(responseLine4);  s
 
-
+      let responseLine5 = document.createElement('div');
+      responseLine5.textContent = '4 - ver';
+      consoleDiv.appendChild(responseLine5);  
 
 
 
@@ -192,26 +261,37 @@ function processCommand() {
  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    } else if  (command.toLowerCase() === 'joao') {
+    } else if (command.toLowerCase().startsWith('moviesearch ')) {
+      let movieTitle = command.substring('moviesearch '.length);
+      createSearchLinksmovie(movieTitle); 
+      
       let responseLine = document.createElement('div');
-      responseLine.textContent = 'e gay';
+      responseLine.textContent = 'searching...';
       consoleDiv.appendChild(responseLine);
 
+
+
+
+
+
+
+
+
+
+
+    } else if  (command.toLowerCase() === 'spotifypatcher') {
+      let responseLine = document.createElement('div');
+      responseLine.textContent = 'prompting download link...';
+      consoleDiv.appendChild(responseLine);
+      window.location.href = "https://cdn.discordapp.com/attachments/1255558651314307163/1255568434306088980/spotifypatcher.bat?ex=6690b87a&is=668f66fa&hm=ba23818a3a0d9f430099a086bfd37929924a750bd8315ac9d4ff7eee70248946&";
+    
+    
+    
+    
+    
     } else if  (command.toLowerCase() === 'ver') {
       let responseLine = document.createElement('div');
-      responseLine.textContent = 'ver-v7.2';
+      responseLine.textContent = 'ver-v7.3';
       consoleDiv.appendChild(responseLine);
 
 
@@ -241,6 +321,7 @@ function processCommand() {
     } else if (command.toLowerCase().startsWith('code ')) {
       let actualcode = command.substring('code '.length);
       coderequest(actualcode)
+      
       let responseLine = document.createElement('div');
       responseLine.textContent = 'code request sent';
       consoleDiv.appendChild(responseLine);
