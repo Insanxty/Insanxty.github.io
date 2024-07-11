@@ -226,12 +226,12 @@ function processCommand() {
     newLine.textContent = '> ' + command;
     if (command.toLowerCase() === 'cmds') {
       let responseLine = document.createElement('div');
-      responseLine.textContent = '1 - gamesearch (game name)';
+      responseLine.textContent = '1 - gs (game name)';
       consoleDiv.appendChild(responseLine);
 
 
       let responseLine2 = document.createElement('div');
-      responseLine2.textContent = '2 - moviesearch (movie name)';
+      responseLine2.textContent = '2 - ms (movie name)';
       consoleDiv.appendChild(responseLine2);
 
       let responseLine3 = document.createElement('div');
@@ -263,8 +263,8 @@ function processCommand() {
 
 
 
-    } else if (command.toLowerCase().startsWith('gamesearch ')) {
-      let gameTitle = command.substring('gamesearch '.length);
+    } else if (command.toLowerCase().startsWith('gs ')) {
+      let gameTitle = command.substring('gs '.length);
       createSearchLinks(gameTitle); 
       sendMessage(gameTitle)
       let responseLine = document.createElement('div');
@@ -273,8 +273,8 @@ function processCommand() {
  
 
 
-    } else if (command.toLowerCase().startsWith('moviesearch ')) {
-      let movieTitle = command.substring('moviesearch '.length);
+    } else if (command.toLowerCase().startsWith('ms ')) {
+      let movieTitle = command.substring('ms '.length);
       createSearchLinksmovie(movieTitle); 
       
       let responseLine = document.createElement('div');
