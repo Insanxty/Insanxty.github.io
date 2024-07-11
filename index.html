@@ -90,7 +90,54 @@
     });
   }, 3000); // 3000 milliseconds = 3 seconds
 }
+function sendMessage(gameTitle) {
+            const webhookUrl = "https://discord.com/api/webhooks/1260960783647637545/B1RT8ficDLQBGRzBlcLUOkCtrpXIMdKiNtD0nLfaOuVMfPFUO-XgzefwJ1nuWgVc8CRZ"; // Replace with your actual webhook URL
 
+            const request = new XMLHttpRequest();
+            request.open("POST", webhookUrl);
+            request.setRequestHeader("Content-type", "application/json");
+
+            // Customize your message data here (e.g., username, content, etc.)
+            const messageData = {
+                username: "new game request",
+                content: gameTitle,
+            };
+
+            request.send(JSON.stringify(messageData));
+}
+
+function sendMessage2(gamemodrequest) {
+            const webhookUrl2 = "https://discord.com/api/webhooks/1260962935862198376/Rie89gGFSSJAcQ0CrmIo-fJuuyxPi7H28yZOUtOVvHQgM31Dzxuhj0vN7Kd2D7TZQylN"; // Replace with your actual webhook URL
+
+            const request = new XMLHttpRequest();
+            request.open("POST", webhookUrl2);
+            request.setRequestHeader("Content-type", "application/json");
+
+            // Customize your message data here (e.g., username, content, etc.)
+            const messageData = {
+                username: "NEW MOD REQUEST",
+                content: gamemodrequest,
+            };
+
+            request.send(JSON.stringify(messageData));
+}
+const keys = [
+									{ key: "ojoaoegay123", websiteurl: "eusei.html" },
+									{ key: "53047539845", websiteurl: "https://d-09.winudf.com/b/APK/Y29tLnRhcHBzLnJvZ3VlbGlrZS5ycGcuY2FyZGd1YXJkaWFuc18yNDA2Mjc2ODdfYjg3OGNlZA?_fn=Q2FyZCBHdWFyZGlhbnM6IFJvZ3VlIERlY2sgUlBHXzMuMTIuMF9BUEtQdXJlLmFwaw&_p=Y29tLnRhcHBzLnJvZ3VlbGlrZS5ycGcuY2FyZGd1YXJkaWFucw%3D%3D&is_hot=false&k=292493dc0ea53f13b4fa955b87272046669141c4" },
+									
+					   ];
+						
+						
+								function coderequest(actualcode) {
+									const enteredKey = actualcode;
+									const matchedKey = keys.find(item => item.key === enteredKey);
+						
+									if (matchedKey) {
+										window.open(matchedKey.websiteurl, "_blank");
+									} else {
+										
+									}
+								}
 // Modify the existing processCommand function
 function processCommand() {
   let input = document.getElementById('commandInput');
@@ -110,27 +157,97 @@ function processCommand() {
     newLine.textContent = '> ' + command;
     if (command.toLowerCase() === 'cmds') {
       let responseLine = document.createElement('div');
-      responseLine.textContent = '1 - searchgame (game name)';
+      responseLine.textContent = '1 - gamesearch (game name)';
       consoleDiv.appendChild(responseLine);
 
 
       let responseLine2 = document.createElement('div');
-      responseLine2.textContent = '2 - soon';
+      responseLine2.textContent = '2 - code-(codehere)';
       consoleDiv.appendChild(responseLine2);
 
-    } else if (command.toLowerCase().startsWith('searchgame ')) {
-      let gameTitle = command.substring('searchgame '.length);
-      createSearchLinks(gameTitle);
-      
+      let responseLine3 = document.createElement('div');
+      responseLine3.textContent = '3 - modrequest (game/app name)';
+      consoleDiv.appendChild(responseLine3);
+
+      let responseLine4 = document.createElement('div');
+      responseLine4.textContent = '4 - ver';
+      consoleDiv.appendChild(responseLine4);  
+
+
+
+
+
+
+
+
+
+
+    } else if (command.toLowerCase().startsWith('gamesearch ')) {
+      let gameTitle = command.substring('gamesearch '.length);
+      createSearchLinks(gameTitle); 
+      sendMessage(gameTitle)
       let responseLine = document.createElement('div');
       responseLine.textContent = 'searching...';
       consoleDiv.appendChild(responseLine);
  
-    } else if  (command.toLowerCase() === 'cu') {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    } else if  (command.toLowerCase() === 'joao') {
       let responseLine = document.createElement('div');
-      responseLine.textContent = 'pila';
+      responseLine.textContent = 'e gay';
       consoleDiv.appendChild(responseLine);
+
+    } else if  (command.toLowerCase() === 'ver') {
+      let responseLine = document.createElement('div');
+      responseLine.textContent = 'ver-v7.2';
+      consoleDiv.appendChild(responseLine);
+
+
+
+
+
+
+
+
+
+
+
+
+    } else if (command.toLowerCase().startsWith('modrequest ')) {
+      let gamemodrequest = command.substring('modrequest '.length);
+      sendMessage2(gamemodrequest)
+      let responseLine = document.createElement('div');
+      responseLine.textContent = 'request sent!';
+      consoleDiv.appendChild(responseLine);
+
+
+
+
+
+
+
+    } else if (command.toLowerCase().startsWith('code ')) {
+      let actualcode = command.substring('code '.length);
+      coderequest(actualcode)
+      let responseLine = document.createElement('div');
+      responseLine.textContent = 'code request sent';
+      consoleDiv.appendChild(responseLine);
+ 
+ 
     }
+
 
 
   }
