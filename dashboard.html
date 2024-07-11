@@ -107,12 +107,14 @@ function createSearchLinksmovie(movieTitle) {
   const websites2 = [
   { name: "zmovie", url: `https://zmovie.site/index.html?s=${encodeURIComponent(movieTitle)}` },
   { name: "letflix.tv", url: `https://letflix.tv/search/${encodeURIComponent(movieTitle)}` },
-  { name: "cinego", url: `https://cinego.tv/search?keyword=${encodeURIComponent(movieTitle)}` },
+  { name: "cine go", url: `https://cinego.tv/search?keyword=${encodeURIComponent(movieTitle)}` },
   { name: "bflix", url: `https://bflixhd.to/filter?keyword=${encodeURIComponent(movieTitle)}` },
   { name: "moviepire", url: `https://moviepire.net/search?q=${encodeURIComponent(movieTitle)}` },
   { name: "fmovies", url: `https://fmovieswatch.to/?s=${encodeURIComponent(movieTitle)}` },
-
-
+  { name: "visioncine (dub)", url: `https://www.visioncine-2.com/search.php?q=${encodeURIComponent(movieTitle)}` },
+  { name: "obaflix (dub)", url: `https://obaflix.to/?s=${encodeURIComponent(movieTitle)}` },
+  { name: "cineclub (telegram, dub)", url: ` https://t.me/s/Cineclubon` },
+ 
 ];
 
 
@@ -302,7 +304,7 @@ function processCommand() {
     
     } else if  (command.toLowerCase() === 'ver') {
       let responseLine = document.createElement('div');
-      responseLine.textContent = 'ver-v7.5';
+      responseLine.textContent = 'ver-v7.6';
       consoleDiv.appendChild(responseLine);
 
 
