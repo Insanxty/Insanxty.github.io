@@ -48,7 +48,7 @@
 <body>
 <div class="console-container">
   <div id="console" class="console"></div>
-  <input type="text" id="commandInput" placeholder="Enter password or command" autofocus />
+  <input type="text" id="commandInput" placeholder="enter command" autofocus />
 </div>
 
 <script>
@@ -251,8 +251,12 @@ function processCommand() {
       consoleDiv.appendChild(responseLine6);  
 
       let responseLine7 = document.createElement('div');
-      responseLine7.textContent = '6 - ver';
+      responseLine7.textContent = '6 - forceupdate';
       consoleDiv.appendChild(responseLine7);  
+
+      let responseLine8 = document.createElement('div');
+      responseLine8.textContent = '7 - clear';
+      consoleDiv.appendChild(responseLine8);  
 
 
 
@@ -294,6 +298,13 @@ function processCommand() {
       window.location.href = "https://cdn.discordapp.com/attachments/1255558651314307163/1255568434306088980/spotifypatcher.bat?ex=6690b87a&is=668f66fa&hm=ba23818a3a0d9f430099a086bfd37929924a750bd8315ac9d4ff7eee70248946&";
     
     } else if  (command.toLowerCase() === 'forceupdate') {
+      let responseLine = document.createElement('div');
+      responseLine.textContent = 'prompted';
+      consoleDiv.appendChild(reqsponseLine);
+      window.location.href = "https://insanxty.github.io/";
+
+
+    } else if  (command.toLowerCase() === 'clear') {
       let responseLine = document.createElement('div');
       responseLine.textContent = 'prompted';
       consoleDiv.appendChild(responseLine);
