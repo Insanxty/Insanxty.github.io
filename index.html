@@ -1,371 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>joaquimn</title>
-<style>
-  body {
-    background-color: black;
-    color: green;
-    font-family: 'Courier New', monospace;
-    margin: 0;
-    padding: 0;
-  }
-  .console-container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  .console {
-    width: 80%;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow-y: auto;
-    height: 90%;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    text-align: left; /* Aligns text to the left */
-  }
-  .console::-webkit-scrollbar {
-    display: none;
-  }
-  input {
-    width: 80%;
-    max-width: 800px;
-    background-color: transparent;
-    color: green;
-    border: 1px solid green;
-    padding: 5px;
-    font-family: 'Courier New', monospace;
-    margin: 10px auto;
-    display: block;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>llogin</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-box {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<div class="console-container">
-  <div id="console" class="console"></div>
-  <input type="text" id="commandInput" placeholder="enter command" autofocus />
-</div>
-
-<script>
-  let isAuthenticated = false;
-  let password = 'admin';
-
-  function scrollToBottom() {
-    let consoleDiv = document.getElementById('console');
-    consoleDiv.scrollTop = consoleDiv.scrollHeight;
-  }
-  function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-  function createSearchLinks(gameTitle) {
-  const websites = [
-{ name: "FitGirl Repacks✅", url: `https://fitgirl-repacks.site/?s=${encodeURIComponent(gameTitle)}` },
-{ name: "onlinefix.me✅", url: `https://online-fix.me/index.php?do=search&subaction=search&story=${encodeURIComponent(gameTitle)}` },
-{ name: "kaOS⚠️", url: `https://kaoskrew.org/search.php?keywords=${encodeURIComponent(gameTitle)}` },
-{ name: "DODI repacks✅", url: `https://dodi-repacks.site/?s=${encodeURIComponent(gameTitle)}` },
-												{ name: "SKIDROW⚠️", url: `https://www.skidrowreloaded.com/?s=${encodeURIComponent(gameTitle)}` },
-												{ name: "freegoggames✅", url: `https://freegogpcgames.com/?s=${encodeURIComponent(gameTitle)}` },
-												{ name: "mrpcgamer⚠️", url: `https://mrpcgamer.net/?s=${encodeURIComponent(gameTitle)}` },
-												{ name: "IGG-GAMES⚠️", url: `https://igg-games.com/?s=${encodeURIComponent(gameTitle)}` },
-												{ name: "NUVEMAZUL 🇵🇹✅", url: `https://nuvemazul.org/games.html?pl=search&val=${encodeURIComponent(gameTitle)}` },
-												{ name: "‼️⚠️pirate bay⚠️‼️", url: `https://thepiratebay.org/search.php?q=${encodeURIComponent(gameTitle)}` },
-
-
-
-
-  ];
-
-
-  
-
-  // Delay function for 3 seconds before executing the code inside
-  setTimeout(() => {
-    let consoleDiv = document.getElementById('console');
-    websites.forEach(site => {
-      let link = document.createElement('a');
-      link.href = site.url;
-      link.textContent = site.name; // Display only the website name
-      link.style.color = 'green';
-      link.target = '_blank'; // Open in new tab
-      consoleDiv.appendChild(link);
-      consoleDiv.appendChild(document.createElement('br')); // Line break
-    });
-  }, 3000); // 3000 milliseconds = 3 seconds
-}
-
-
-
-
-
-
-function createSearchLinksmovie(movieTitle) {
-  const websites2 = [
-  { name: "zmovie", url: `https://zmovie.site/index.html?s=${encodeURIComponent(movieTitle)}` },
-  { name: "letflix.tv", url: `https://letflix.tv/search/${encodeURIComponent(movieTitle)}` },
-  { name: "cine go", url: `https://cinego.tv/search?keyword=${encodeURIComponent(movieTitle)}` },
-  { name: "bflix", url: `https://bflixhd.to/filter?keyword=${encodeURIComponent(movieTitle)}` },
-  { name: "moviepire", url: `https://moviepire.net/search?q=${encodeURIComponent(movieTitle)}` },
-  { name: "fmovies", url: `https://fmovieswatch.to/?s=${encodeURIComponent(movieTitle)}` },
-  { name: "visioncine (dub)", url: `https://www.visioncine-2.com/search.php?q=${encodeURIComponent(movieTitle)}` },
-  { name: "obaflix (dub)", url: `https://obaflix.to/?s=${encodeURIComponent(movieTitle)}` },
-  { name: "cineclub (telegram, dub)", url: ` https://t.me/s/Cineclubon` },
- 
-];
-
-
-  
-
-  // Delay function for 3 seconds before executing the code inside
-  setTimeout(() => {
-    let consoleDiv = document.getElementById('console');
-    websites2.forEach(site => {
-      let link = document.createElement('a');
-      link.href = site.url;
-      link.textContent = site.name; // Display only the website name
-      link.style.color = 'green';
-      link.target = '_blank'; // Open in new tab
-      consoleDiv.appendChild(link);
-      consoleDiv.appendChild(document.createElement('br')); // Line break
-    });
-  }, 3000); // 3000 milliseconds = 3 seconds
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function sendMessage(gameTitle) {
-            const webhookUrl = "https://discord.com/api/webhooks/1260960783647637545/B1RT8ficDLQBGRzBlcLUOkCtrpXIMdKiNtD0nLfaOuVMfPFUO-XgzefwJ1nuWgVc8CRZ"; // Replace with your actual webhook URL
-
-            const request = new XMLHttpRequest();
-            request.open("POST", webhookUrl);
-            request.setRequestHeader("Content-type", "application/json");
-
-            // Customize your message data here (e.g., username, content, etc.)
-            const messageData = {
-                username: "new game request",
-                content: gameTitle,
-            };
-
-            request.send(JSON.stringify(messageData));
-}
-
-function sendMessage2(gamemodrequest) {
-            const webhookUrl2 = "https://discord.com/api/webhooks/1260962935862198376/Rie89gGFSSJAcQ0CrmIo-fJuuyxPi7H28yZOUtOVvHQgM31Dzxuhj0vN7Kd2D7TZQylN"; // Replace with your actual webhook URL
-
-            const request = new XMLHttpRequest();
-            request.open("POST", webhookUrl2);
-            request.setRequestHeader("Content-type", "application/json");
-
-            // Customize your message data here (e.g., username, content, etc.)
-            const messageData = {
-                username: "NEW MOD REQUEST",
-                content: gamemodrequest,
-            };
-
-            request.send(JSON.stringify(messageData));
-}
-const keys = [
-									{ key: "ojoaoegay123", websiteurl: "eusei.html" },
-									{ key: "74736457354", websiteurl: "https://dl.gamedva.com/Game/Card-Guardians-v3.12.0-mod-GameDVA.com.apk" },
-									
-					   ];
-						
-						
-								function coderequest(actualcode) {
-									const enteredKey = actualcode;
-									const matchedKey = keys.find(item => item.key === enteredKey);
-						
-									if (matchedKey) {
-										window.open(matchedKey.websiteurl, "_blank");
-									} else {
-										
-									}
-								}
-// Modify the existing processCommand function
-function processCommand() {
-  let input = document.getElementById('commandInput');
-  let command = input.value;
-  input.value = '';
-  let consoleDiv = document.getElementById('console');
-  let newLine = document.createElement('div');
-  
-  if (!isAuthenticated) {
-    if (command === password) {
-      isAuthenticated = true;
-      newLine.textContent = 'Access granted, do "cmds" to view the currently active commands';
-    } else {
-      newLine.textContent = 'Access denied.';
-    }
-  } else {
-    newLine.textContent = '> ' + command;
-    if (command.toLowerCase() === 'cmds') {
-      let responseLine = document.createElement('div');
-      responseLine.textContent = '1 - gs (game name)';
-      consoleDiv.appendChild(responseLine);
-
-
-      let responseLine2 = document.createElement('div');
-      responseLine2.textContent = '2 - ms (movie name)';
-      consoleDiv.appendChild(responseLine2);
-
-      let responseLine3 = document.createElement('div');
-      responseLine3.textContent = '3 - code (codehere)';
-      consoleDiv.appendChild(responseLine3);
-
-      let responseLine4 = document.createElement('div');
-      responseLine4.textContent = '4 - modrequest (game/app name)';
-      consoleDiv.appendChild(responseLine4);  
-
-      let responseLine5 = document.createElement('div');
-      responseLine5.textContent = '5- spotifypatcher (win only)';
-      consoleDiv.appendChild(responseLine5);  
-
-      let responseLine6 = document.createElement('div');
-      responseLine6.textContent = '6 - forceupdate';
-      consoleDiv.appendChild(responseLine6);  
-
-      let responseLine7 = document.createElement('div');
-      responseLine7.textContent = '6 - clear';
-      consoleDiv.appendChild(responseLine7);  
-
-      let responseLine8 = document.createElement('div');
-      responseLine8.textContent = '7 - ver';
-      consoleDiv.appendChild(responseLine8);  
-
-
-
-
-
-
-    } else if (command.toLowerCase().startsWith('gs ')) {
-      let gameTitle = command.substring('gs '.length);
-      createSearchLinks(gameTitle); 
-      sendMessage(gameTitle)
-      let responseLine = document.createElement('div');
-      responseLine.textContent = 'searching...';
-      consoleDiv.appendChild(responseLine);
- 
-
-
-    } else if (command.toLowerCase().startsWith('ms ')) {
-      let movieTitle = command.substring('ms '.length);
-      createSearchLinksmovie(movieTitle); 
-      
-      let responseLine = document.createElement('div');
-      responseLine.textContent = 'searching...';
-      consoleDiv.appendChild(responseLine);
-
-
-
-
-
-
-
-
-
-
-
-    } else if  (command.toLowerCase() === 'spotifypatcher') {
-      let responseLine = document.createElement('div');
-      responseLine.textContent = 'prompting download link...';
-      consoleDiv.appendChild(responseLine);
-      window.location.href = "https://cdn.discordapp.com/attachments/1255558651314307163/1255568434306088980/spotifypatcher.bat?ex=6690b87a&is=668f66fa&hm=ba23818a3a0d9f430099a086bfd37929924a750bd8315ac9d4ff7eee70248946&";
-    
-    } else if  (command.toLowerCase() === 'forceupdate') {
-      let responseLine = document.createElement('div');
-      responseLine.textContent = 'prompted';
-      consoleDiv.appendChild(reqsponseLine);
-      window.location.href = "https://insanxty.github.io/";
-
-
-    } else if  (command.toLowerCase() === 'clear') {
-      let responseLine = document.createElement('div');
-      responseLine.textContent = 'prompted';
-      consoleDiv.appendChild(responseLine);
-      window.location.href = "https://insanxty.github.io/";
-    
-    
-    
-    
-    } else if  (command.toLowerCase() === 'ver') {
-      let responseLine = document.createElement('div');
-      responseLine.textContent = 'ver-v7.7';
-      consoleDiv.appendChild(responseLine);
-
-
-
-
-
-
-
-
-
-
-
-
-    } else if (command.toLowerCase().startsWith('modrequest ')) {
-      let gamemodrequest = command.substring('modrequest '.length);
-      sendMessage2(gamemodrequest)
-      let responseLine = document.createElement('div');
-      responseLine.textContent = 'request sent!';
-      consoleDiv.appendChild(responseLine);
-
-
-
-
-
-
-
-    } else if (command.toLowerCase().startsWith('code ')) {
-      let actualcode = command.substring('code '.length);
-      coderequest(actualcode)
-      
-      let responseLine = document.createElement('div');
-      responseLine.textContent = 'code request sent';
-      consoleDiv.appendChild(responseLine);
- 
- 
-    }
-
-
-
-  }
-
-  consoleDiv.appendChild(newLine);
-  scrollToBottom();
-}
-
-  document.getElementById('commandInput').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-      processCommand();
-    }
-  });
-</script>
+    <div class="login-box">
+        <h1>login</h1>
+        <input type="text" id="licenseKey" placeholder="Enter license key">
+        <button onclick="checkLicense()">Log In</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const keys = [
+            { key: "3H43-GHH4-GJ12", expiration: "2024-07-20 23:59" },
+            { key: "BN12-GJ12-KBAS", expiration: "2024-09-15 18:30" },
+        ];
+
+        function checkLicense() {
+            const inputKey = document.getElementById("licenseKey").value;
+            const foundKey = keys.find(k => k.key === inputKey);
+
+            if (foundKey) {
+                const expirationDate = new Date(foundKey.expiration);
+                const currentDate = new Date();
+                const timeRemaining = expirationDate - currentDate;
+
+                if (timeRemaining > 0) {
+                    const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                    
+                    document.getElementById("result").textContent = `Bem vindo, tens ${hours} horas e ${minutes} minutos.`;
+                    setTimeout(() => {
+                        window.location.href = "website.html"; // Replace with your desired website
+                    }, 3000); // Wait for 3 seconds
+                } else {
+                    document.getElementById("result").textContent = "Expired license!";
+                }
+            } else {
+                document.getElementById("result").textContent = "Invalid license key.";
+            }
+        }
+    </script>
 </body>
 </html>
