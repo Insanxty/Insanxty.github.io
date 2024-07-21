@@ -3,64 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>llogin</title>
+    <title>Loading Screen</title>
     <style>
         body {
-            background-color: black;
-            color: white;
-            font-family: monospace;
+            margin: 0;
+            overflow: hidden; /* Hide scrollbars during video playback */
+        }
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            z-index: 9999; /* Ensure it's on top */
         }
-        .login-box {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
+        #video-container {
+            display: none; /* Initially hidden */
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #website-content {
+            display: none; /* Initially hidden */
         }
     </style>
 </head>
 <body>
-    <div class="login-box">
-        <h1>login</h1>
-        <input type="text" id="licenseKey" placeholder="Enter license key">
-        <button onclick="checkLicense()">Log In</button>
-        <p id="result"></p>
+    <div id="loading-screen">
+        <div id="video-container">
+            <video autoplay loop>
+                <source src="video.mp4" type="video/mp4">
+                <!-- Add other video formats if needed -->
+            </video>
+        </div>
+        <div id="website-content">
+          
+           
+        </div>
     </div>
 
     <script>
-        const keys = [
-            { key: "3H43-GHH4-GJ12", expiration: "2024-07-20 23:59" },
-            { key: "BN12-GJ12-KBAS", expiration: "2024-09-15 18:30" },
-        ];
-
-        function checkLicense() {
-            const inputKey = document.getElementById("licenseKey").value;
-            const foundKey = keys.find(k => k.key === inputKey);
-
-            if (foundKey) {
-                const expirationDate = new Date(foundKey.expiration);
-                const currentDate = new Date();
-                const timeRemaining = expirationDate - currentDate;
-
-                if (timeRemaining > 0) {
-                    const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
-                    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-                    
-                    document.getElementById("result").textContent = `Bem vindo, tens ${hours} horas e ${minutes} minutos.`;
-                    setTimeout(() => {
-                        window.location.href = "website.html"; // Replace with your desired website
-                    }, 3000); // Wait for 3 seconds
-                } else {
-                    document.getElementById("result").textContent = "Expired license!";
-                }
-            } else {
-                document.getElementById("result").textContent = "Invalid license key.";
-            }
-        }
+        // Wait for 10 seconds, then reveal the website content and redirect
+        setTimeout(() => {
+            document.getElementById('video-container').style.display = 'none';
+            document.getElementById('website-content').style.display = 'block';
+            window.location.href = 'login.html'; // Redirect to index.html
+        }, 10000); // 10 seconds in milliseconds
     </script>
 </body>
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>llogin</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-box {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h1>login</h1>
+        <input type="text" id="licenseKey" placeholder="Enter license key">
+        <button onclick="checkLicense()">Log In</button>
+        <p id="result"></p>
+    </div>
+
+    
+    <script>
+        const keys = [
+            { key: "3H43-GHH4-GJ12", expiration: "2024-07-20 23:59" },
+            { key: "BN12-GJ12-KBAS", expiration: "2024-09-15 18:30" },
+        ];
+
+        function checkLicense() {
+            const inputKey = document.getElementById("licenseKey").value;
+            const foundKey = keys.find(k => k.key === inputKey);
+
+            if (foundKey) {
+                const expirationDate = new Date(foundKey.expiration);
+                const currentDate = new Date();
+                const timeRemaining = expirationDate - currentDate;
+
+                if (timeRemaining > 0) {
+                    const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                    
+                    document.getElementById("result").textContent = `Bem vindo, tens ${hours} horas e ${minutes} minutos.`;
+                    setTimeout(() => {
+                        window.location.href = "website.html"; // Replace with your desired website
+                    }, 3000); // Wait for 3 seconds
+                } else {
+                    document.getElementById("result").textContent = "Expired license!";
+                }
+            } else {
+                document.getElementById("result").textContent = "Invalid license key.";
+            }
+        }
+    </script>
+</body>
+</html>
