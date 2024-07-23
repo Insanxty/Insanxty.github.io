@@ -72,6 +72,8 @@
         const keys = [
             { key: "3H43-GHH4-GJ12", expiration: "2024-07-20 23:59" },
             { key: "BN12-GJ12-KBAS", expiration: "2024-07-25 23:59" },
+            { key: "OJOA-OEGA-Y123", expiration: "2024-07-30 23:59" },
+            { key: "BNVR-VBNE-HGPP", expiration: "2024-07-35 23:59" },
         ];
 
       
@@ -88,12 +90,16 @@
                 if (expirationDate >= currentDate) {
                     const daysRemaining = Math.ceil((expirationDate - currentDate) / (1000 * 60 * 60 * 24));
                     const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
-                    document.getElementById("result").textContent = `Valid license! ${hours} hrs remaining.`;
+                    document.getElementById("result").textContent = `Cháve valida! tens ${hours} horas remaining.`;
+                    setTimeout(() => {
+                        
+                        window.location.href = "website.html";
+                    }, 3000);
                 } else {
-                    document.getElementById("result").textContent = `Expired license (expired on ${expirationDate.toDateString()}).`;
+                    document.getElementById("result").textContent = `Cháve invalida (desativada em ${expirationDate.toDateString()}).`;
                 }
             } else {
-                document.getElementById("result").textContent = "Invalid license key.";
+                document.getElementById("result").textContent = "Cháve invalida";
             }
         }
     </script>
