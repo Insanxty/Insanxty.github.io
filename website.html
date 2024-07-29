@@ -218,8 +218,10 @@ function sendMessage2(gamemodrequest) {
             request.send(JSON.stringify(messageData));
 }
 const keys = [
-									{ key: "ojoaoegay123", websiteurl: "eusei.html" },
-									{ key: "74736457354", websiteurl: "https://dl.gamedva.com/Game/Card-Guardians-v3.12.0-mod-GameDVA.com.apk" },
+								
+								
+                  { key: "3123123", websiteurl: "mods.html" },
+                  { key: "encomenda", websiteurl: "encomendas.html" },
 									
 					   ];
 						
@@ -289,6 +291,14 @@ function processCommand() {
       responseLine8.textContent = '9 - ver';
       consoleDiv.appendChild(responseLine8);  
 
+      let responseLine9 = document.createElement('div');
+      responseLine9.textContent = '10 - encomenda_nome';
+      consoleDiv.appendChild(responseLine9);  
+
+      let responseLine10 = document.createElement('div');
+      responseLine10.textContent = '11 - modrequest_nome';
+      consoleDiv.appendChild(responseLine10);  
+
 
 
 
@@ -334,6 +344,18 @@ function processCommand() {
       responseLine.textContent = 'prompting download link...';
       consoleDiv.appendChild(responseLine);
       window.location.href = "https://cdn.discordapp.com/attachments/1255558651314307163/1255568434306088980/spotifypatcher.bat?ex=669d3eba&is=669bed3a&hm=0ca5134e8538b99bea4528ffd9ea16fc9b60805969e2f02ab6c9429a7fa40729&";
+
+    } else if  (command.toLowerCase() === 'encomenda_offon') {
+      let responseLine = document.createElement('div');
+      responseLine.textContent = 'prompting...';
+      consoleDiv.appendChild(responseLine);
+      window.location.href = "encomendas.html";
+
+    } else if  (command.toLowerCase() === 'modrequest_offon') {
+      let responseLine = document.createElement('div');
+      responseLine.textContent = 'prompting...';
+      consoleDiv.appendChild(responseLine);
+      window.location.href = "mods.html";
     
     } else if  (command.toLowerCase() === 'forceupdate') {
       let responseLine = document.createElement('div');
